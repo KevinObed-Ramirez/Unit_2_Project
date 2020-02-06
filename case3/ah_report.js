@@ -5,8 +5,8 @@
    Tutorial 10
    Case Problem 3
 
-   Author:  
-   Date:   
+   Author:  Kevin Ramirez
+   Date:   2-5-20
    
    Filename: ah_report.js
    
@@ -27,12 +27,21 @@
       information for the donor
       
 */
+//declaring a varaible for the total of donations
+var donationTotal = 0;
 
+donors.forEach(calcSum);
+//declaring a varaible for the Summary table
+var summaryTable = "<table><tr><th>Donors</th><td>"+donors+"</td></tr><tr><th>Total Donations</th><td>$"+donationTotal.toLocaleString+"</table>";
 
+document.getElementById("donationSummary").innerHTML= summaryTable;
+//declaring a varaible for the major donors
+var majorDonors = filter(findMajorDonors);
+//sorts through the major donors
+majorDonors.sort(donorSortDescending);
 
-
-
-
+//variable for the table 
+var donorTable = "<table>"
 
 
 
