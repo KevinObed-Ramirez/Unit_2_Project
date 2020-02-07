@@ -32,16 +32,20 @@ var donationTotal = 0;
 
 donors.forEach(calcSum);
 //declaring a varaible for the Summary table
-var summaryTable = "<table><tr><th>Donors</th><td>"+donors+"</td></tr><tr><th>Total Donations</th><td>$"+donationTotal.toLocaleString+"</table>";
+var summaryTable = "<table><tr><th>Donors</th><td>" + donors.length + "</td></tr><tr><th>Total Donations</th><td>$" + donationTotal.toLocaleString() + "</table>";
 
 document.getElementById("donationSummary").innerHTML= summaryTable;
 //declaring a varaible for the major donors
-var majorDonors = filter(findMajorDonors);
+var majorDonors = donors.filter(findMajorDonors);
 //sorts through the major donors
 majorDonors.sort(donorSortDescending);
 
 //variable for the table 
-var donorTable = "<table>"
+var donorTable = "<table><caption>Major Donors</caption><tr><th>Donation</th><th>Donor ID</th><th>Date</th><th>Name</th><th>Address</th><th>Phone</th><th>E-mail</th></tr>";
+//Rows for the donations
+majorDonors.forEach(writeDonorRow);
+donorTable += "</table>";
+document.getElementById("donorTable").innerHTML = donorTable;
 
 
 
